@@ -1,0 +1,29 @@
+<h1>Student List</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.firstname %></td>
+      <td><%= student.lastname %></td>
+      <td>
+        <%= button_to 'Sil', student_path(student), method: :delete, data: { confirm: 'Emin misiniz?' } %>
+      </td>
+
+<!--      <td><%#= link_to 'Düzenle', edit_student_path(student) %></td>-->
+      <td>
+        <%= button_to 'Düzenle', edit_student_path(student), method: :get, class: 'edit-button' %>
+      </td>
+      <td colspan="4">
+        <%= button_to 'Yeni Öğrenci Ekle', new_student_path, method: :get, class: 'add-button' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

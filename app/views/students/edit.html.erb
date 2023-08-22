@@ -1,0 +1,19 @@
+<!-- app/views/students/edit.html.erb -->
+
+<h1>Öğrenci Düzenle</h1>
+
+<%= form_for @student do |f| %>
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Güncelle' %>
+  </div>
+<% end %>
+
+<%= link_to 'Geri Dön', students_path %>
